@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animal Details</title>
+</head>
+<body>
+    <h1>Animal Details</h1>
+    <ul>
+        <li>Name: {{ animal.name }}</li>
+        <li>Species: {{ animal.species }}</li>
+        <li>Zookeeper: {{ animal.zookeeper.name if animal.zookeeper else 'None' }}</li>
+        <li>Enclosure: {{ animal.enclosure.environment if animal.enclosure else 'None' }}</li>
+    </ul>
+</body>
+</html>

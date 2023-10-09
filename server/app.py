@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from flask import Flask, make_response
+from flask import Flask, make_response, render_template
 from flask_migrate import Migrate
 
 from models import db, Zookeeper, Enclosure, Animal
@@ -19,7 +19,8 @@ def home():
 
 @app.route('/animal/<int:id>')
 def animal_by_id(id):
-    return ''
+    animal = Animal.query.get(id)
+    return render_template('animal.html', animal=animal)
 
 @app.route('/zookeeper/<int:id>')
 def zookeeper_by_id(id):
